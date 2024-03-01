@@ -14,8 +14,7 @@ const router = Router();
 // El path por defecto de la ruta es cliente
 router.post("/", 
 [
-  check("nombre", "El nombre es obligatorio").not().isEmpty(),
-  check("direccion", "La dorección es obligatoria").not().isEmpty(), 
+  check("nombre", "El nombre es obligatorio").not().isEmpty(), 
   check("telefono", "El telefono es obligatorio").not().isEmpty(),
   check("email", "El email es obligatotio").not().isEmpty().isEmail(),
   check("tipoDocumento", "El tipo documento es obligatorio").not().isEmpty(),

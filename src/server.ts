@@ -1,12 +1,14 @@
 import express, { Application, Request, Response } from "express";
 import { dbConnection } from "./database/connection";
+import usuarioRoutes from "./routes/usuario.route";
 import clientesRoutes from "./routes/cliente.route";
 
 class Server {
   private app: Application;
   private port: string;
   private apiPaths = {
-    cliente: "/api/v1/cliente"
+    cliente: "/api/v1/cliente",
+    usuario: "/api/v1/usuario"
   };
 
   constructor() {
@@ -39,6 +41,7 @@ class Server {
 
   routes(): void {
     this.app.use(this.apiPaths.cliente, clientesRoutes);
+    this.app.use(this.apiPaths.usuario, usuarioRoutes);
   };
 
   listen(): void {
