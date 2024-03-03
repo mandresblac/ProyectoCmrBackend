@@ -2,11 +2,13 @@ import { Router } from "express";
 import { check } from "express-validator";
 import { validateFields } from "../middlewares/validate-fields";
 import { crearUsuario } from "../controllers/usuario.controller";
+import validateJWT from "../middlewares/validate-jwt";
 
 // path: /api/v1/usuario
 const router = Router();
 
-router.post("/", 
+router.post("/",
+// validateJWT, 
 [
   check("nombre", "El nombre es obligatorio").not().isEmpty(), 
   check("email", "El email es obligatotio").not().isEmpty().isEmail(),
