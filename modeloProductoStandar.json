@@ -1,0 +1,33 @@
+{
+  "id": 1,
+  "nombre": "Laptop",
+  "descripcion": "Potente laptop para tareas profesionales",
+  "precio": 1200,
+  "categoria": "Electrónicos",
+  "stock": 50,
+  "fechaCreacion": "2022-02-14T12:00:00Z",
+  "caracteristicas": {
+    "procesador": "Intel Core i7",
+    "memoriaRAM": "16GB",
+    "almacenamiento": "512GB SSD",
+    "pantalla": "15.6 pulgadas"
+  },
+"programasInstalados":{
+    "so": "Windows",
+    "Office": "Office 365 Home",
+    "antivirus": "Karpessky",
+    "multimedia": "Adobe"
+  },
+  "distribuidor":{
+    "nit": "45645",
+    "rasonSocial": "PC LTA",
+    "telefono": "456456",
+    "direccion": "Calle 13 # 4 5"
+  },
+  "peso": "45kg",
+  "usuario": {
+    "id": "78978978"
+  },  
+  "ip": "192.45.21.121", 
+  "estado": true
+}
