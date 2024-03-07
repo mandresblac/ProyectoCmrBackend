@@ -2,7 +2,6 @@ import { Model, Schema, model } from "mongoose";
 
 // Deficnicon de esquema o tipos de datos
 const ClienteSchema = new Schema({
-  id: {type: Number, unique: true,},
   nombre: { type: String, required: true},
   direccion: { type: String, required: false },
   telefono: { type: Number, required: true },

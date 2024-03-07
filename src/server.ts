@@ -4,6 +4,7 @@ import clientesRoutes from "./routes/cliente.route";
 import usuarioRoutes from "./routes/usuario.route";
 import authRoutes from "./routes/auth.route";
 import productoRoutes from "./routes/producto.route"
+import cors from "cors";
 
 class Server {
   private app: Application; // Variable para la aplicacion
@@ -36,6 +37,9 @@ class Server {
   }
 
   middlewares() {
+    // Para evitar error de cors
+    this.app.use(cors());
+
     // Lectura del body en JSON
     this.app.use(express.json());
 

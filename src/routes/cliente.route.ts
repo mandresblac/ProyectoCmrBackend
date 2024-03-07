@@ -24,7 +24,7 @@ validateJWT,
   validateFields
 ], 
 crearClientes);
-router.get("/", validateJWT, getClientes);
+router.get("/", getClientes);
 router.get("/:id", validateJWT, getUnCliente);
 router.put("/:id", validateJWT, updateCliente);
 router.put("/estado/:id", validateJWT, updateEstadoCliente);

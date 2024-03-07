@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 // Funcion que genera el token
 const generateJWT = (
   _id: string, 
-  login: string, 
+  login: string = "", 
   expiresIn = process.env.EXPIRES_IN, 
   jwtSecret = process.env.JWT_SECRET
 ) => {
@@ -21,7 +21,7 @@ const generateJWT = (
       },
       (error: string, token: string) => {
         if (error) {
-          console.error(error);
+          console.log(error);
           reject("No se puede generar el token");
         } else resolve(token);
       }
