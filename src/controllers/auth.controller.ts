@@ -5,11 +5,11 @@ import generateJWT from '../helpers/jwt';
 import { CustomRequest } from '../middlewares/validate-jwt';
 
 export const login = async (req: Request, res: Response) => {
-  const { login: loginUser, password } = req.body;
+  const { email, password } = req.body;
   
   try {
     // Verificamos si login coinside
-    const usuario = await UsuarioModel.findOne({ login: loginUser
+    const usuario = await UsuarioModel.findOne({ email: email
     }); 
 
     // Si no existe

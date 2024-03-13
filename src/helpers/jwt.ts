@@ -10,7 +10,7 @@ const generateJWT = (
   return new Promise((resolve, reject) => {
     const payload = {
       _id,
-      login
+      login // cambiarlo por email 
     };
 
     jwt.sign(

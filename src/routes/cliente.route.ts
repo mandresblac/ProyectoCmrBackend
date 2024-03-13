@@ -14,7 +14,7 @@ const router = Router();
 
 // El path por defecto de la ruta es cliente
 router.post("/", 
-validateJWT,
+// validateJWT,
 [
   check("nombre", "El nombre es obligatorio").not().isEmpty(), 
   check("telefono", "El telefono es obligatorio").not().isEmpty(),

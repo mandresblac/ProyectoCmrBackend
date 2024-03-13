@@ -10,7 +10,7 @@ const router = Router();
 router.post(
   "/", 
   [
-    check("login", "El número login es obligatorio").not().isEmpty(),
+    check("email", "El email es obligatorio").not().isEmpty(),
     check("password", "El password es obligatorio").not().isEmpty(),
     validateFields
   ], 

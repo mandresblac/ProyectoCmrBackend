@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { validateFields } from "../middlewares/validate-fields";
-import { crearUsuario } from "../controllers/usuario.controller";
+import { crearUsuario, getUsuarios, updateUsuario } from "../controllers/usuario.controller";
 import validateJWT from "../middlewares/validate-jwt";
 
 // path: /api/v1/usuario
@@ -14,11 +14,13 @@ router.post("/",
   check("email", "El email es obligatotio").not().isEmpty().isEmail(),
   check("tipoDocumento", "El tipo documento es obligatorio").not().isEmpty(),
   check("numeroDocumento", "El número documento es obligatorio").not().isEmpty(),
-  check("login", "El número login es obligatorio").not().isEmpty(),
   check("password", "El password es obligatorio").not().isEmpty(),
   validateFields
 ], 
 crearUsuario);
+
+router.get("/", getUsuarios);
+router.put("/:id", validateJWT, updateUsuario);
 
 // Exportamos por default la constante router
 export default router;
