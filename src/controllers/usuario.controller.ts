@@ -85,3 +85,23 @@ export const updateUsuario = async(req: Request, resp: Response) => {
     })
   };
 };
+
+export const deleteUsuario = async(req: Request, resp: Response) => {
+  try {
+    // id del cliente
+    const id = req.params.id;
+
+    // El busca todos los clientes
+    const usaurioEliminado = await usuarioModel.findByIdAndDelete(id);
+
+    resp.status(200).json({
+      ok: true,
+      cliente: usaurioEliminado,
+    })
+  } catch (error) {
+    resp.status(400).json({
+      ok: false,
+      cmsg: "Error consultar los clientes"
+    })
+  };
+};
