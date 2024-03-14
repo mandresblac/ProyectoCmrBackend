@@ -63,7 +63,8 @@ export const  renewToken = async (req: CustomRequest, res: Response) => {
 
     res.json({
       ok: true,
-      usuario
+      usuario,
+      token
     })
   } catch (error) {
     console.error(error);

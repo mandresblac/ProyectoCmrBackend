@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { validateFields } from "../middlewares/validate-fields";
-import { cambioContrasena, login, olvidoContrasena } from "../controllers/auth.controller";
+import { cambioContrasena, login, olvidoContrasena, renewToken } from "../controllers/auth.controller";
 import validateJWT, { validateJWTPass } from "../middlewares/validate-jwt";
 
 // Path /api/v1/auth
@@ -36,6 +36,8 @@ router.put(
   ], 
   cambioContrasena
 );
+
+router.get("/", validateJWT, renewToken);
 
 // Exportamos por default la constante router
 export default router;
