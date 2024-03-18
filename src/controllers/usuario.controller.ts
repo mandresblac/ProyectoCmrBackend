@@ -75,7 +75,7 @@ export const updateUsuario = async(req: Request, resp: Response) => {
 
     resp.status(200).json({
       ok: true,
-      cliente: usuarioActualizado,
+      usuario: usuarioActualizado,
 
     })
   } catch (error) {
@@ -96,7 +96,7 @@ export const deleteUsuario = async(req: Request, resp: Response) => {
 
     resp.status(200).json({
       ok: true,
-      cliente: usaurioEliminado,
+      usuario: usaurioEliminado,
     })
   } catch (error) {
     resp.status(400).json({
