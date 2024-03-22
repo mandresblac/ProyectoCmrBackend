@@ -64,6 +64,26 @@ export const getUsuarios = async(req: Request, resp: Response) => {
   }
 };
 
+export const getUnUsuario = async (req: Request, resp: Response) => {
+  try {
+    const id = req.params.id;
+    console.log("Esto es el id", id);
+
+    // El busca todos los clientes
+    const usuarios = await UsuarioModel.findById({ _id: id});
+    resp.status(200).json({
+      ok: true,
+      usuarios,
+
+    })
+  } catch (error) {
+    resp.status(400).json({
+      ok: false,
+      cmsg: "Error al obtener un usuario, comuniquese con el administrador."
+    })
+  };
+};
+
 export const updateUsuario = async(req: Request, resp: Response) => {
   try {
     const id = req.params.id; // id delusuario

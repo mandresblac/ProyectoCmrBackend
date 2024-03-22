@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { validateFields } from "../middlewares/validate-fields";
-import { crearUsuario, deleteUsuario, getUsuarios, updateUsuario } from "../controllers/usuario.controller";
+import { crearUsuario, deleteUsuario, getUnUsuario, getUsuarios, updateUsuario } from "../controllers/usuario.controller";
 import validateJWT from "../middlewares/validate-jwt";
 
 // path: /api/v1/usuario
@@ -22,6 +22,7 @@ crearUsuario);
 router.get("/", getUsuarios);
 router.put("/:id", validateJWT, updateUsuario);
 router.delete("/:id", validateJWT, deleteUsuario);
+router.get("/:id", getUnUsuario);
 
 // Exportamos por default la constante router
 export default router;
